@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Citas de Los Simpsons</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="estilos.css">
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+/>
+</head>
+<body>
+    
+<div class="botoncito">
+    <div class="buscar">
+        <input type="text" placeholder="Buscar" required id="characterNameInput" />
+    
+        <div class="btn">
+            <i class="fas fa-search icon"></i>
+        </div>
+    </div>
+</div>
+<!-- Este es el contenedor donde se agregarán las citas -->
+<div class="container mt-4">
+  <div class="row" id="citasContainer"></div>
+</div>
+
+<!-- Paginación -->
+<nav >
+  <ul class="pagination justify-content-center mt-4" id="pagination"></ul>
+</nav>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="field.js" defer></script>
+</body>
+</html>
