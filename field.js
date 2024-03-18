@@ -77,45 +77,52 @@ function showPagination(citaGroups, currentPage) {
   const currentPageLink = pagination.querySelector(`a:nth-child(${currentPage})`);
   currentPageLink.parentNode.classList.add('active');
 }
-document.getElementById('characterNameInput').addEventListener('keyup', function(event) {
-    // Obtener el valor del campo de entrada
-    const characterName = event.target.value.trim();
+document.getElementById('characterNameInput').addEventListener('input', function(event) {
+  // Obtener el valor del campo de entrada
+  const characterName = event.target.value.trim();
 
-    // Realizar la solicitud a la API solo si hay al menos un carácter ingresado
-    if (characterName.length > 0) {
-        fetch(`https://thesimpsonsquoteapi.glitch.me/quotes?count=15&character=${characterName}`)
-            .then(response => response.json())
-            .then(data => {
-                // Limpiar el contenedor de citas
-                document.getElementById('citasContainer').innerHTML = '';
+  // Realizar la solicitud a la API solo si hay al menos un carácter ingresado
+  if (characterName.length > 0) {
+      fetch(`https://thesimpsonsquoteapi.glitch.me/quotes?count=15&character=${characterName}`)
+          .then(response => response.json())
+          .then(data => {
+              // Limpiar el contenedor de citas
+              document.getElementById('citasContainer').innerHTML = '';
 
-                // Mostrar las citas obtenidas
-                data.forEach(quote => {
-                    const quoteContainer = document.createElement('div');
-                    quoteContainer.classList.add('col-md-4', 'mb-4');
+              // Mostrar las citas obtenidas
+              data.forEach(quote => {
+                  const quoteContainer = document.createElement('div');
+                  quoteContainer.classList.add('col-md-3', 'mb-6', 'border', 'border-dark');
 
-                    const imgElement = document.createElement('img');
-                    imgElement.src = quote.image;
-                    imgElement.alt = quote.character;
-                    imgElement.classList.add('img-fluid', 'rounded');
+                  const imgElement = document.createElement('img');
+                  imgElement.src = quote.image;
+                  imgElement.alt = quote.character;
+                  imgElement.classList.add('img-fluid', 'rounded');
 
-                    const nameElement = document.createElement('p');
-                    nameElement.textContent = quote.character;
-                    nameElement.classList.add('font-weight-bold');
+                  const nameElement = document.createElement('p');
+                  nameElement.textContent = quote.character;
+                  nameElement.classList.add('font-weight-bold');
 
-                    const quoteElement = document.createElement('p');
-                    quoteElement.textContent =quote.quote;
+                  const quoteElement = document.createElement('p');
+                  quoteElement.textContent = quote.quote;
 
-                    quoteContainer.appendChild(imgElement);
-                    quoteContainer.appendChild(nameElement);
-                    quoteContainer.appendChild(quoteElement);
+                  quoteContainer.appendChild(imgElement);
+                  quoteContainer.appendChild(nameElement);
+                  quoteContainer.appendChild(quoteElement);
 
-                    document.getElementById('citasContainer').appendChild(quoteContainer);
-                });
-            })
-            .catch(error => console.error('Error al obtener las citas:', error));
-    } else {
-        // Limpiar el contenedor de citas si no se ha ingresado ningún carácter
-        document.getElementById('citasContainer').innerHTML = '';
-    }
+                  document.getElementById('citasContainer').appendChild(quoteContainer);
+              });
+          })
+          .catch(error => console.error('Error al obtener las citas:', error));
+  } else {
+      // Limpiar el contenedor de citas si no se ha ingresado ningún carácter
+      document.getElementById('citasContainer').innerHTML = '';
+  }
 });
+const video = document.getElementById('slowVideo');
+
+function slowDownVideo() {
+    video.playbackRate = 0.35; // Puedes ajustar este valor según la velocidad deseada (0.5 para la mitad de la velocidad original)
+}
+
+slowDownVideo();

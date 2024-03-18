@@ -15,26 +15,34 @@
 />
 </head>
 <body>
-    
-<div class="botoncito">
-    <div class="buscar">
-        <input type="text" placeholder="Buscar" required id="characterNameInput" />
-    
-        <div class="btn">
-            <i class="fas fa-search icon"></i>
-        </div>
-    </div>
-</div>
-<!-- Este es el contenedor donde se agregarán las citas -->
-<div class="container mt-4">
-  <div class="row" id="citasContainer"></div>
-</div>
 
-<!-- Paginación -->
-<nav >
-  <ul class="pagination justify-content-center mt-4" id="pagination"></ul>
-</nav>
+<div class="contenido">
+  <img src="images/The_Simpsons_-_Logo_3Fol%29.webp" alt="">
+  <div class="botoncito">
 
+      <div class="buscar">
+
+          <input type="text" placeholder="Buscar" required id="characterNameInput" />
+      
+          <div class="btn">
+              <i class="fas fa-search icon"></i>
+          </div>
+      </div>
+  </div>
+  <!-- Este es el contenedor donde se agregarán las citas -->
+  <div class="container mt-4">
+    <div class="row" id="citasContainer"></div>
+  </div>
+  <!-- Paginación -->
+  <nav >
+    <ul class="pagination justify-content-center mt-4" id="pagination"></ul>
+  </nav>
+  <video id="slowVideo" autoplay muted loop>
+    <source src="videos/clouds_-_100299 (720p).mp4"
+    type="video/mp4">
+  </video>
+  <div class="capa"></div>
+</div>     
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="field.js" defer></script>
