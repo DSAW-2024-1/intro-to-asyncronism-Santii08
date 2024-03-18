@@ -57,7 +57,8 @@
     justify-content: center;
     height: 20vh;
     background: linear-gradient(#534f8a, #695be6);
-    
+    position: relative;
+    z-index: 2;
     margin: 0;
     padding: 0;
     
@@ -82,9 +83,4 @@
     height: 100%;
     opacity: 0.5;
     mix-blend-mode: overlay;
-  }
-  img{
-    position: relative;
-    z-index: 2;
-
   }
